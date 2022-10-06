@@ -4,23 +4,21 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 
-export default function CreateUser() {
+export function Login() {
   const paperStyle={padding: '50px 20px', width:400, margin:"20px auto"}
   const[name, setName]=useState('');
   const[password, setPassword]=useState('');
-  const[age, setAge]=useState('');
-  const[city, setCity]=useState('');
 
   const handleClick=(e)=>{
     e.preventDefault()
-    const user={name, password, age, city}
+    const user={name, password}
     console.log(user)
   }
 
   return (
     <container> 
       <Paper elevation={3} style={paperStyle}>
-        <h1> Maak een account aan</h1>
+        <h1>Login</h1>
     <Box
       component="form"
       sx={{
@@ -37,15 +35,7 @@ export default function CreateUser() {
       value={password}
       onChange={(e)=>setPassword(e.target.value)}
       />
-      <TextField id="standard-basic" label="Leeftijd" variant="standard" fullWidth 
-      value={age}
-      onChange={(e)=>setAge(e.target.value)}
-      />
-      <TextField id="standard-basic" label="Woonplaats" variant="standard" fullWidth 
-      value={city}
-      onChange={(e)=>setCity(e.target.value)}
-      />
-    <Button variant="contained" onClick={handleClick}>Sla gegevens op</Button>
+    <Button variant="contained" onClick={handleClick}>Login</Button>
     </Box>
     </Paper>
     </container>
