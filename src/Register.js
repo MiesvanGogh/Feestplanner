@@ -2,23 +2,27 @@ import React, { useState }  from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button'
+import Button from '@mui/material/Button';
+import Appbar from './Components/Appbar';
 
-export function Login() {
+const Register = () => {
   const paperStyle={padding: '50px 20px', width:400, margin:"20px auto"}
   const[name, setName]=useState('');
   const[password, setPassword]=useState('');
+  const[age, setAge]=useState('');
+  const[city, setCity]=useState('');
 
   const handleClick=(e)=>{
     e.preventDefault()
-    const user={name, password}
+    const user={name, password, age, city}
     console.log(user)
   }
 
   return (
     <container> 
+      <Appbar/>
       <Paper elevation={3} style={paperStyle}>
-        <h1>Login</h1>
+        <h1> Maak een account aan</h1>
     <Box
       component="form"
       sx={{
@@ -35,9 +39,18 @@ export function Login() {
       value={password}
       onChange={(e)=>setPassword(e.target.value)}
       />
-    <Button variant="contained" onClick={handleClick}>Login</Button>
+      <TextField id="standard-basic" label="Leeftijd" variant="standard" fullWidth 
+      value={age}
+      onChange={(e)=>setAge(e.target.value)}
+      />
+      <TextField id="standard-basic" label="Woonplaats" variant="standard" fullWidth 
+      value={city}
+      onChange={(e)=>setCity(e.target.value)}
+      />
+    <Button variant="contained" onClick={handleClick}>Sla gegevens op</Button>
     </Box>
     </Paper>
     </container>
   );
 }
+export default Register;

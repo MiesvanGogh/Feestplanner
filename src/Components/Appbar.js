@@ -9,7 +9,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
-export default function MenuAppBar() {
+export default function MenuAppbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
