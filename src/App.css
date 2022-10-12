@@ -1,5 +1,11 @@
-.App {
+body {
   text-align: center;
+  background-image: url('./Images/Feestplannerbackground.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  background-blend-mode: color;
 }
 
 .App-logo {

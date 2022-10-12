@@ -16,6 +16,13 @@ const Register = () => {
     e.preventDefault()
     const user={name, password, age, city}
     console.log(user)
+    fetch("http://localhost:8080/user/add",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(user)
+    }).then(()=>{
+      console.log("New User Added")
+    })
   }
 
   return (
