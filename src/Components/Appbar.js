@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import {Link} from "react-router-dom";
 
 export default function MenuAppbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -63,9 +64,15 @@ export default function MenuAppbar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
+                <Link to="/Feesten" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Mijn feesten</MenuItem>
+                </Link>
+                <Link to="/Register" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Vrienden</MenuItem>
+                </Link>
+                <Link to="/Login" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Agenda</MenuItem>
+                </Link>
               </Menu>
             </div>
         </Toolbar>
