@@ -4,9 +4,10 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Appbar from './Components/Appbar';
+import {Link} from "react-router-dom";
 
 const Register = () => {
-  const paperStyle={padding: '50px 20px', width:400, margin:"20px auto"}
+  const paperStyle={padding: '15px 20px', width: 400, margin:"20px auto"}
   const[name, setName]=useState('');
   const[password, setPassword]=useState('');
   const[age, setAge]=useState('');
@@ -56,6 +57,12 @@ const Register = () => {
       />
     <Button variant="contained" onClick={handleClick}>Sla gegevens op</Button>
     </Box>
+    <h5>
+      <strong>
+        Al een account?
+      </strong> <br/> <br/>
+      <Link to="/Login"> Ga naar de login pagina </Link>
+    </h5>
     </Paper>
     </container>
   );
