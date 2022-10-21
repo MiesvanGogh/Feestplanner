@@ -17,7 +17,7 @@ const Register = () => {
     e.preventDefault()
     const user={name, password, age, city}
     console.log(user)
-    fetch("http://localhost:8080/user/add",{
+    fetch("http://localhost:8080/User/add",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(user)
