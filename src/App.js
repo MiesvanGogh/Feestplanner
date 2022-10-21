@@ -7,16 +7,19 @@ import Feesten from './Feesten';
 
 function App() {
   return (
-        <div className="Bg">
-                <BrowserRouter>
-              <Routes>
-                  <Route path="/" element={<Home/>} />
-                  <Route  path="/Login" element={<Login/>} />
-                  <Route  path="/Register" element={<Register/>} />
-                  <Route  path="/Feesten" element={<Feesten/>} />
-              </Routes>
+    <body>
+        <div className="Background">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route  path="/Login" element={<Login/>} />
+              <Route  path="/Register" element={<Register/>} />
+              <Route  path="/Feesten" element={<Feesten/>} />
+            </Routes>
           </BrowserRouter>
-      </div>
+        </div>
+    </body>
+
   );
 }
 
