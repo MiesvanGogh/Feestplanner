@@ -12,8 +12,12 @@ import {Link} from "react-router-dom";
 
 export default function MenuAppbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  
   const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuProfile = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -44,13 +48,13 @@ export default function MenuAppbar() {
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
-                
+                onClick={handleMenuProfile}
                 color="inherit"
               >
                 <AccountCircle />
               </IconButton>
               <Menu
-                id="menu-appbar"
+                id="menu"
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: 'top',
@@ -65,14 +69,14 @@ export default function MenuAppbar() {
                 onClose={handleClose}
               >
                 <Link to="/Feesten" style={{ textDecoration: 'none'}}>
-                <MenuItem onClick={handleClose}>Mijn feesten</MenuItem>
+                <MenuItem onClick={handleClose}>Feestagenda</MenuItem>
                 </Link>
-                <Link to="/Register" style={{ textDecoration: 'none'}}>
+                 <Link to="/Vrienden" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Vrienden</MenuItem>
                 </Link>
-                <Link to="/Login" style={{ textDecoration: 'none'}}>
+                {/*<Link to="/Login" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Agenda</MenuItem>
-                </Link>
+                </Link> */}
               </Menu>
             </div>
         </Toolbar>
