@@ -1,16 +1,12 @@
 import React, { useEffect, useState }  from 'react';
-import Appbar from './Components/Appbar'
-import { render } from 'react-dom';
-import Calendar from 'moedim';
+import Appbar from './Components/Appbar';
+import Calendar from './Components/Calendar';
+import {Link} from "react-router-dom";
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 
 const Feesten = () => {
-    const [date, setDate] = useState(new Date());
-
-    const onChange = date => {
-      setDate(date);
-      console.log(date);
-    };
-
+  const paperStyle={padding: '20px 20px', width:400, margin:"20px auto" }
     // useEffect(()=>{
     //     fetch("http://localhost:8080/user/getAll")
     //     .then(res=>res.json())
@@ -21,12 +17,23 @@ const Feesten = () => {
     //   },[])
 
       return (
-        <div>
+          <container>
           <Appbar/>
-           <div className='b'> 
-            <Calendar onChange={onChange} value={date}/>
-           </div>
-        </div>
+          <Paper elevation={3} style={paperStyle}>
+          FeestKalender
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1 },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+    <Calendar/>
+    </Box>
+    </Paper>
+
+    </container>
       );
 }
 export default Feesten;
