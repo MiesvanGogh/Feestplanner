@@ -18,7 +18,7 @@ const Vrienden = () => {
         noValidate
         autoComplete="off"
       >
-        Je hebt geen vrienden kanker sukkel, kop een trein
+        Je hebt nog geen vrienden.
       </Box>
       </Paper>
       </container>
