@@ -30,6 +30,12 @@ const Feesten = () => {
       autoComplete="off"
     >
     <Calendar/>
+    <h5>
+      <strong>
+      Nog geen feest in de planning?
+      </strong> <br/> <br/>
+      <Link to="/CreateFeesten"> Maak hier je eigen feest aan</Link>
+    </h5>
     </Box>
     </Paper>
 
