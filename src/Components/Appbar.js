@@ -74,9 +74,12 @@ export default function MenuAppbar() {
                  <Link to="/Vrienden" style={{ textDecoration: 'none'}}>
                 <MenuItem onClick={handleClose}>Vrienden</MenuItem>
                 </Link>
-                {/*<Link to="/Login" style={{ textDecoration: 'none'}}>
-                <MenuItem onClick={handleClose}>Agenda</MenuItem>
-                </Link> */}
+                <Link to="/Login" style={{ textDecoration: 'none'}}>
+                <MenuItem onClick={handleClose}>Login</MenuItem>
+                </Link> 
+                <Link to="/Register" style={{ textDecoration: 'none'}}>
+                <MenuItem onClick={handleClose}>Register</MenuItem>
+                </Link> 
               </Menu>
             </div>
         </Toolbar>
