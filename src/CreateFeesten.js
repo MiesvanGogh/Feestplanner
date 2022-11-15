@@ -4,17 +4,18 @@ import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Appbar from './Components/Appbar';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 const CreateFeesten = () => {
   const paperStyle={padding: '15px 20px', width: 400, margin:"20px auto"}
   const[name, setName]=useState('');
   const[description, setDescription]=useState('');
-  const[starttime, setStartTime]=useState('');
-  const[EndTime, setEndTime]=useState('');
+  const [startTime, setStartTime] = useState(new Date());
+  const[endTime, setEndTime]=useState(new Date());
 
   const handleClick=(e)=>{
     e.preventDefault()
-    const party={name, description, starttime, EndTime,}
+    const party={name, description, startTime, endTime,}
     console.log(party)
     fetch("http://localhost:8080/User/add",{
       method:"POST",
@@ -46,13 +47,17 @@ const CreateFeesten = () => {
       value={description}
       onChange={(e)=>setDescription(e.target.value)}
       />
-      <TextField id="standard-basic" label="Starttijd feest" variant="standard" fullWidth 
-      value={starttime}
-      onChange={(e)=>setStartTime(e.target.value)}
+     <DateTimePicker
+          label="Datum en starttijd"
+          value={startTime}
+          onChange={(e)=>setStartTime(e.target.value)}
+          renderInput={(params) => <TextField {...params} />}
       />
-      <TextField id="standard-basic" label="Eindtijd feest" variant="standard" fullWidth 
-      value={EndTime}
-      onChange={(e)=>setEndTime(e.target.value)}
+     <DateTimePicker
+          label="Datum en eindtijd"
+          value={endTime}
+          onChange={(e)=>setEndTime(e.target.value)}
+          renderInput={(params) => <TextField {...params} />}
       />
     <Button variant="contained" onClick={handleClick}>Sla gegevens op</Button>
     </Box>
