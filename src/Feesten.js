@@ -7,14 +7,15 @@ import Box from '@mui/material/Box';
 
 const Feesten = () => {
   const paperStyle={padding: '20px 20px', width:400, margin:"20px auto" }
-    // useEffect(()=>{
-    //     fetch("http://localhost:8080/user/getAll")
-    //     .then(res=>res.json())
-    //     .then((result)=>{
-    //       setUsers(result);
-    //     }
-    //   )
-    //   },[])
+  const[users, setUsers]=useState([])
+     useEffect(()=>{
+         fetch("http://localhost:8080/Partymember/getAll")
+         .then(res=>res.json())
+         .then((result)=>{
+           setUsers(result);
+         }
+       )
+       },[])
 
       return (
           <container>
