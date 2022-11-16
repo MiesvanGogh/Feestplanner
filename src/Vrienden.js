@@ -1,10 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import Appbar from './Components/Appbar'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import Button from "@mui/material/Button";
+import { Link, useNavigate } from "react-router-dom";
+import { Edit } from "@mui/icons-material";
 
 const Vrienden = () => {
     const paperStyle={padding: '15px 20px', width: 400, margin:"20px auto"}
+    const [users, setUsers]= useState([]);
+
+    fetch("http://localhost:8080/Partymember/getAll")
+    .then((response) => response.json())
+    .then((json) => setUsers(json));
+
     return (
       <container> 
         <Appbar/>
@@ -18,7 +28,39 @@ const Vrienden = () => {
         noValidate
         autoComplete="off"
       >
-        Je hebt nog geen vrienden.
+        <table class="table">
+        <thead class="header">
+          <tr>
+            <th scope="col"> Name</th>
+            <th scope="col"> Age</th>
+            <th scope="col"> City</th>
+          </tr>
+        </thead>
+        {users.map((item) => {
+          const Edit = () => {
+            console.log("mies");
+          };
+
+          return (
+            <tr class="TableInhoud" align="center">
+              <td>{JSON.stringify(item.name)}</td>
+              <td>{JSON.stringify(item.age)}</td>
+              <td>{JSON.stringify(item.city)}</td>
+              <td>
+                {" "}
+                <Button
+                  className="Button"
+                  onClick={() => {
+                    Edit();
+                  }}
+                >
+                  Word vrienden
+                </Button>
+              </td>
+            </tr>
+          );
+        })}
+      </table>
       </Box>
       </Paper>
       </container>

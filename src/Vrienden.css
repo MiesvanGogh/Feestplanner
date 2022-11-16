@@ -1,0 +1,14 @@
+.TableInhoud{
+    background-color: #4F4F61;
+    color: #FFFFFF;
+}
+
+.table {
+    margin-top: 50px;
+    text-align: center;
+    overflow-y: scroll;
+}
+.header{
+    color:#FFFFFF;
+    background-color: #5255dd;
+}
