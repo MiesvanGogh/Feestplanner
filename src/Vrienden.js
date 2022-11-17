@@ -31,9 +31,9 @@ const Vrienden = () => {
         <table class="table">
         <thead class="header">
           <tr>
-            <th scope="col"> Name</th>
-            <th scope="col"> Age</th>
-            <th scope="col"> City</th>
+            <th scope="col"> Naam</th>
+            <th scope="col"> Leeftijd</th>
+            <th scope="col"> Woonplaats</th>
           </tr>
         </thead>
         {users.map((item) => {
