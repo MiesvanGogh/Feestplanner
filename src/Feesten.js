@@ -7,7 +7,8 @@ import Box from '@mui/material/Box';
 
 const Feesten = () => {
   const paperStyle={padding: '20px 20px', width:400, margin:"20px auto" }
-  const[setUsers]=useState([])
+  
+  {/*const[users, setUsers]=useState([])
      useEffect(()=>{
          fetch("http://localhost:8080/Partymember/getAll")
          .then(res=>res.json())
@@ -15,7 +16,7 @@ const Feesten = () => {
            setUsers(result);
          }
        )
-       },[])
+       },[])*/}
 
       return (
           <container>
