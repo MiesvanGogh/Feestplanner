@@ -4,8 +4,7 @@ import Appbar from './Components/Appbar'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
-import { Link, useNavigate } from "react-router-dom";
-import { Edit } from "@mui/icons-material";
+
 
 const Vrienden = () => {
     const paperStyle={padding: '15px 20px', width: 400, margin:"20px auto"}
