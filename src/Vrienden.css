@@ -1,14 +1,14 @@
-.TableInhoud{
-    background-color: #4F4F61;
-    color: #FFFFFF;
+.TableInhoud {
+  background-color: #4f4f61;
+  color: #ffffff;
 }
 
 .table {
-    margin-top: 50px;
-    text-align: center;
-    overflow-y: scroll;
+  margin-top: 50px;
+  text-align: center;
+  overflow-y: scroll;
 }
-.header{
-    color:#FFFFFF;
-    background-color: #5255dd;
+.header {
+  color: #ffffff;
+  background-color: #5255dd;
 }

@@ -8,11 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function MenuAppbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -42,46 +42,46 @@ export default function MenuAppbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Feestplanner
           </Typography>
-            <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenuProfile}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <Link to="/Feesten" style={{ textDecoration: 'none'}}>
+          <div>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenuProfile}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <Link to="/Feesten" style={{ textDecoration: 'none' }}>
                 <MenuItem onClick={handleClose}>Feestagenda</MenuItem>
-                </Link>
-                 <Link to="/Vrienden" style={{ textDecoration: 'none'}}>
+              </Link>
+              <Link to="/Vrienden" style={{ textDecoration: 'none' }}>
                 <MenuItem onClick={handleClose}>Vrienden</MenuItem>
-                </Link>
-                <Link to="/Login" style={{ textDecoration: 'none'}}>
+              </Link>
+              <Link to="/Login" style={{ textDecoration: 'none' }}>
                 <MenuItem onClick={handleClose}>Login</MenuItem>
-                </Link> 
-                <Link to="/Register" style={{ textDecoration: 'none'}}>
+              </Link>
+              <Link to="/Register" style={{ textDecoration: 'none' }}>
                 <MenuItem onClick={handleClose}>Register</MenuItem>
-                </Link> 
-              </Menu>
-            </div>
+              </Link>
+            </Menu>
+          </div>
         </Toolbar>
       </AppBar>
     </Box>

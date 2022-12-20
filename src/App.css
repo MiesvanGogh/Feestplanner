@@ -6,7 +6,7 @@ body {
   overflow: hidden;
 }
 
-.Background{
+.Background {
   background-image: url('./Images/Feestplannerbackground.jpg');
   width: 100%;
   height: 100%;
@@ -57,5 +57,3 @@ body {
 .css-1hbyad5-MuiTypography-root {
   display: none !important;
 }
-
-

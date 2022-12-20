@@ -1,16 +1,16 @@
-import React from "react";
-import Appbar from './Components/Appbar'
+import React from 'react';
+import Appbar from './Components/Appbar';
 
 const Home = () => {
-    return(
-        <div>
-            <div>
-                <Appbar />
-            </div>
-            <div>
-                <h1>Homepage</h1>
-            </div> 
-        </div> 
-    )
-}
+  return (
+    <div>
+      <div>
+        <Appbar />
+      </div>
+      <div>
+        <h1>Homepage</h1>
+      </div>
+    </div>
+  );
+};
 export default Home;
