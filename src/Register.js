@@ -43,6 +43,7 @@ const Register = () => {
             id="standard-basic"
             label="Gebruikersnaam"
             variant="standard"
+            name="Name"
             fullWidth
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -51,6 +52,7 @@ const Register = () => {
             id="standard-basic"
             label="Wachtwoord"
             variant="standard"
+            name="Password"
             fullWidth
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -59,6 +61,7 @@ const Register = () => {
             id="standard-basic"
             label="Leeftijd"
             variant="standard"
+            name="Age"
             fullWidth
             value={age}
             onChange={(e) => setAge(e.target.value)}
@@ -67,11 +70,12 @@ const Register = () => {
             id="standard-basic"
             label="Woonplaats"
             variant="standard"
+            name="City"
             fullWidth
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <Button variant="contained" onClick={handleClick}>
+          <Button variant="contained" class="btn" name="btn" onClick={handleClick}>
             Sla gegevens op
           </Button>
         </Box>
