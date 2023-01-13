@@ -17,6 +17,19 @@ const Login = () => {
     console.log(user);
   };
 
+  const Login = (e) => {
+    e.preventDefault();
+    const user = { name, password };
+    console.log(user);
+    fetch('https://localhost:7165/api/CheckLogin?Name=Mies&Password=mies', {
+      method: 'GET',
+      mode:'cors',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(() => {
+      console.log('Login Complete!');
+    });
+  };
+
   return (
     <container>
       <Appbar />
@@ -47,7 +60,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button variant="contained" onClick={handleClick}>
+          <Button variant="contained" onClick={Login}>
             Login
           </Button>
         </Box>
