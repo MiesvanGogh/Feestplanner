@@ -12,20 +12,29 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [age, setAge] = useState('');
   const [city, setCity] = useState('');
+  const [error, setError] = useState(false);
 
   const handleClick = (e) => {
-    e.preventDefault();
-    const user = { name, password, age, city };
-    console.log(user);
-    fetch('http://localhost:8080/Partymember/add', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    }).then(() => {
-      console.log('New User Added');
-    });
+    if(name.length===0||password.length===0||age.length===0||city.length===0)
+    {
+      setError(true);
+    }
+    // eslint-disable-next-line no-sequences
+    if(name,password,age,city)
+    {
+      e.preventDefault();
+      const user = { name, password, age, city };
+      console.log(user);
+      fetch('http://localhost:8080/Partymember/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user),
+      }).then(() => {
+        console.log('New User Added');
+      });
+    }
   };
-
+  
   return (
     <container>
       <Appbar />
@@ -48,6 +57,8 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          {error&&name.length<=0?
+          <label> Vul een gebruikersnaam in</label>: ""}
           <TextField
             id="standard-basic"
             label="Wachtwoord"
@@ -57,7 +68,10 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error&&password.length<=0?
+          <label> Vul een wachtwoord in</label>: ""}
           <TextField
+            type="number"
             id="standard-basic"
             label="Leeftijd"
             variant="standard"
@@ -66,6 +80,8 @@ const Register = () => {
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
+          {error&&age.length<=0?
+          <label> Vul je leeftijd in</label>: ""}
           <TextField
             id="standard-basic"
             label="Woonplaats"
@@ -75,6 +91,8 @@ const Register = () => {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
+          {error&&city.length<=0?
+          <label> Vul een woonplaats in</label> : ""}
           <Button variant="contained" class="btn" name="btn" onClick={handleClick}>
             Sla gegevens op
           </Button>
