@@ -11,12 +11,6 @@ const Login = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    const user = { name, password };
-    console.log(user);
-  };
-
   const Login = (e) => {
     e.preventDefault();
     const user = { name, password };
