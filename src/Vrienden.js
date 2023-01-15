@@ -77,7 +77,7 @@ const Vrienden = () => {
                       );
 
                       let message = result
-                        ? Delete(item.age)
+                        ? Delete(item.ID)
                         : "You clicked the Cancel button";
                     }}
                   >
