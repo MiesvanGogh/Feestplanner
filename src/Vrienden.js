@@ -10,7 +10,7 @@ const Vrienden = () => {
   const paperStyle = { padding: '15px 20px', width: 400, margin: '20px auto' };
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
-  
+
   fetch('http://localhost:8080/Partymember/getAll')
     .then((response) => response.json())
     .then((json) => setUsers(json));
@@ -53,9 +53,9 @@ const Vrienden = () => {
 
               return (
                 <tr class="TableInhoud" align="center">
-                  <td>{JSON.stringify(item.name)}</td>
-                  <td>{JSON.stringify(item.age)}</td>
-                  <td>{JSON.stringify(item.city)}</td>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                  <td>{item.city}</td>
                   <td>
                   <Button
                     className="Button"
@@ -77,9 +77,8 @@ const Vrienden = () => {
                       );
 
                       let message = result
-                        ? Delete(item)
+                        ? Delete(item.age)
                         : "You clicked the Cancel button";
-                        window.location.reload();
                     }}
                   >
                     Verwijderen
