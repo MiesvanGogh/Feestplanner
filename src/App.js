@@ -6,6 +6,7 @@ import Register from './Register';
 import Feesten from './Feesten';
 import Vrienden from './Vrienden';
 import CreateFeesten from './CreateFeesten';
+import EditUser from './EditUser';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/Feesten" element={<Feesten />} />
             <Route path="/Vrienden" element={<Vrienden />} />
             <Route path="/CreateFeesten" element={<CreateFeesten />} />
+            <Route path="/EditUser" element={<EditUser />} />
           </Routes>
         </BrowserRouter>
       </div>
